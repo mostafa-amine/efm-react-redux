@@ -1,9 +1,7 @@
 
 const initialState = {
     stagiaires: [
-        { matricule: '1', nom: 'Briere', prenom: 'Mostafa Amine' },
-        { matricule: '2', nom: 'Boumedian', prenom: 'Ahmed' },
-        { matricule: '3', nom: 'Briere', prenom: 'Zayd' },
+        { matricule: '1', nom: 'Briere', prenom: 'Mostafa Amine' }
     ],
     matieres: [
         { codeMatiere: '1', intitule: 'Matiere 1', coef: 1 },
@@ -12,10 +10,7 @@ const initialState = {
     ],
     notes: [
         { matricule: '1', codeMatiere: '1', note: 15 },
-        { matricule: '1', codeMatiere: '2', note: 19 },
-        { matricule: '1', codeMatiere: '3', note: 20 },
-        { matricule: '2', codeMatiere: '3', note: 10 },
-        { matricule: '3', codeMatiere: '1', note: 9 },
+        { matricule: '1', codeMatiere: '2', note: 15 },
     ]
 }
 
@@ -25,7 +20,8 @@ export default function reducer(state = initialState, action) {
             return { ...state, notes: [...state.notes, action.payload] }
         case "supprimerNote":
             return { ...state, notes: [...state.notes.filter(n => n !== action.payload)] }
-
+        case "filterNote":
+            return { ...state, notes: [...state.notes.filter(n => parseInt(n.matricule) === parseInt(action.payload))] }
         default:
             return state;
     }
