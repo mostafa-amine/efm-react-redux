@@ -1,0 +1,28 @@
+On se propose de réaliser une application, qui permet la saisie des notes des modules, et affiche le
+bulletin, et la moyenne générale en utilisant react et redux
+
+Soit la structure de données suivante :
+
+{
+    stagiaires: [
+        {matricule: '1', nom: 'Briere', prenom: 'Mostafa Amine'}
+    ],
+    matieres: [
+        {codeMatiere: '1', intitule: 'Matiere 1', coef: 1},
+        {codeMatiere: '2', intitule: 'Matiere 2', coef: 1},
+        {codeMatiere: '3', intitule: 'Matiere 3', coef: 1}
+            ],
+    notes: [
+        {matricule: '1', codeMatiere: '1', note: 15},
+    ]
+}
+
+1- Créez un fichier store.js, qui définit l'état initial, un reducer (à compléter par la suite), et
+exporte le store après sa création. (3 pts)
+
+2-Creez un composant qui permet la saisie des notes du stagiaire. Les matieres dotent apparaitre dans une liste de sélection. (3 pts)
+    a. Créez un créateur d'action, ajouterNote, et mettez à jour votre reducer(2 pts) V
+    b. Affichez la liste des notes sous forme de table, avec un bouton supprimer sur chaque
+    ligne, qui permet de supprimer la ligne courante (2 pts)
+    C. Créez un créateur d'action, supprimerNote, et mettez à jour votre reducer(2 pts)
+    d. Ajoutez un bouton filtrer, qui permet d'afficher les notes du stagiaire, dont le matricule est saisi (3 pts)
